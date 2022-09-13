@@ -16,12 +16,27 @@
                 <input name="cep" type="text"[(ngModel)]="cep">
             </div>
             <div class="btn btn-primary btn-sm btn-icon-split">
-                <span class="icon text-white-80"></span>
-                
+                <span class="icon text-white-80">
+                    <i class="fas fa-home"></i>
+
+                </span>
+                <button class="btn btn-primary btn-sm" type="submit">Pesquisa</button>
 
             </div>
         </form>
-
+        <br>
+        <div class="m1-2 spinner-border sipinner-border-sm" [hidden]="!espera"></div>
+        <div class="shadow-lg mx-4"[hidden]=!pesquisando>
+        <b>CEP pesquisado</b>
+        {{cep}}
+        <br><b>Rua encontrada> </b>
+        {{retorno.rua}}
+        <br><b>Na cidade: </b>
+        {{retorno.cidade}}
+        <br><b>Do Estado: </b>
+        {{retorno.estado}}
+        <br><br><br><button (click)="limpa()">Resetar</button>
+        </div>
     </body>
 
 </html>
